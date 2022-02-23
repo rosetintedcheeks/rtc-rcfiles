@@ -1,0 +1,7 @@
+#!/usr/bin/zsh
+if [ -z "$1" ]
+then
+    vim ~/stuff/notes/notes.txt
+else
+    vim ~/stuff/notes/$1.txt
+fi
