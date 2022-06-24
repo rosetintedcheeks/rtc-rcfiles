@@ -46,7 +46,7 @@ alias zshrc="vim ~/.zshrc.local"
 alias dlsite="wget -mpEk"
 alias htdo="sudo -u http"
 alias copy="xclip -selection clipboard"
-alias i3config="vim ~/.config/i3/config"
+alias i3config="vim ~/.config/i3/config.local"
 
 #tmux is hard to type
 alias tm="tmux"
