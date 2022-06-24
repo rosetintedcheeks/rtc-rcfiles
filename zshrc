@@ -69,6 +69,7 @@ setopt PROMPT_SUBST
 source /usr/share/zsh/share/antigen.zsh
 
 antigen bundle jeffreytse/zsh-vi-mode
+antigen bundle zsh-users/zsh-completions
 
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 
