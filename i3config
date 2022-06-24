@@ -182,14 +182,9 @@ exec --no-startup-id kdeconnect-indicator
 exec_always --no-startup-id xset s off
 exec --no-startup-id numlockx on
 
-# doesn't fix
-#exec_always --no-startup-id ~/aur/i3-chrome-tab-dragging/i3-chrome-tab-dragging.py
-
 workspace 1 output DP-2
 workspace 2 output DP-1
 
-
-#exec --no-startup-id sh ~/.config/i3/scripts/ssh_agent.sh
 
 set $i3lockwall sh ~/.config/i3/scripts/lock.sh
 
