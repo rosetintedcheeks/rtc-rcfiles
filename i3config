@@ -175,15 +175,10 @@ bar {
 
 client.focused #54056b #74258b #ffffff #74258b #54056b 
 
-exec --no-startup-id xrandr --output DP-2 --primary
-exec --no-startup-id xrandr --output DP-1 --right-of DP-2 --auto
 #exec --no-startup-id "/home/oaks/.fehbgloop &"
 exec --no-startup-id kdeconnect-indicator
 exec_always --no-startup-id xset s off
 exec --no-startup-id numlockx on
-
-workspace 1 output DP-2
-workspace 2 output DP-1
 
 hide_edge_borders smart
 workspace_auto_back_and_forth yes

@@ -47,6 +47,7 @@ alias dlsite="wget -mpEk"
 alias htdo="sudo -u http"
 alias copy="xclip -selection clipboard"
 alias i3config="vim ~/.config/i3/config.local"
+alias mdiskimg="sudo losetup --partscan --find --show"
 
 #tmux is hard to type
 alias tm="tmux"
@@ -60,6 +61,7 @@ alias nnn="nnn -e"
 export VISUAL="vim"
 export EDITOR="vim"
 export SUDO_EDITOR="vim"
+export GPG_TTY=$(tty)
 
 export TERMINAL="gnome-terminal"
 
