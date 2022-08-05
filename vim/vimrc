@@ -1,6 +1,6 @@
 syntax on
 
-:imap jk <ESC>
+imap jk <ESC>
 noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>
 inoremap <silent> <C-S>         <C-O>:update<CR>
@@ -9,6 +9,26 @@ inoremap <silent> <C-S>         <C-O>:update<CR>
 inoremap <Nul> <C-x><C-u>
 inoremap <C-j> <C-n>
 inoremap <C-k> <C-p>
+
+nnoremap <S-k> k.
+nnoremap <S-j> j.
+
+nnoremap <silent> <leader>] :JavaSearch<CR>
+nnoremap <silent> <leader>[ :JavaCorrect<CR>
+nnoremap <silent> <leader>m :call ToggleMouse()<CR>
+
+
+set mouse=a
+let g:mouse_on = 1
+function! ToggleMouse()
+	if g:mouse_on
+		setlocal mouse=
+		let g:mouse_on = 0
+	else
+		setlocal mouse=a
+		let g:mouse_on = 1
+	endif
+endfunction
 
 " Let alt key work in gnome-terminal
 let c='a'
@@ -28,7 +48,6 @@ let java_highlight_all = 1
 
 set timeout ttimeoutlen=50
 
-set mouse=a
 
 " NETRW
 "let g:netrw_ftp_cmd="lftp"
@@ -60,7 +79,7 @@ set softtabstop=4
 set smarttab
 
 " spaces instead of a tab when tab is pressed
-set expandtab
+"set expandtab
 
 set ruler
 set background=dark
@@ -102,5 +121,7 @@ let g:tex_flavor = "latex"
 " Also, this installs to /usr/share/vim/vimfiles, which may not be in
 " your runtime path (RTP). Be sure to add it too, e.g:
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
-execute pathogen#infect()
-call pathogen#helptags()
+"execute pathogen#infect()
+"call pathogen#helptags()
+
+au BufWritePost *.php silent! !eval '[ -f ".git/hooks/ctags" ] && .git/hooks/ctags' &
