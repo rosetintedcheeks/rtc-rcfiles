@@ -48,6 +48,7 @@ alias htdo="sudo -u http"
 alias copy="xclip -selection clipboard"
 alias i3config="vim ~/.config/i3/config.local"
 alias mdiskimg="sudo losetup --partscan --find --show"
+alias vimrc="vim ~/.vim/vimrc"
 
 #tmux is hard to type
 alias tm="tmux"
