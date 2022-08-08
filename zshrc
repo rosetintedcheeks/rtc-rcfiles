@@ -19,46 +19,6 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
-#alias lab="~/Scripts/lab"
-#alias serve="~/Scripts/serve.sh"
-#alias shows="~/ato/main.py"
-#alias notes="~/Scripts/notes/notes.py"
-alias hserve="ssh serve"
-alias nserve="ssh nserve"
-alias ls="ls --color=auto -F"
-alias lsa="ls -la"
-alias view="vim -R"
-alias c="clear"
-alias aur="cd /home/oaks/aur"
-alias inst="makepkg -si"
-alias pkb="cat PKGBUILD"
-alias se="sudoedit"
-alias get="sudo pacman -Syu"
-alias upda="~/scripts/upda"
-alias dwmmake="cd ~/suck/dwm; sudo make clean install"
-alias vol="pamixer --get-volume-human"
-alias volup="pamixer -i 10; pamixer --get-volume-human"
-alias voldown="pamixer -d 10; pamixer --get-volume-human"
-alias volset="pamixer --set-volume"
-alias mute="pamixer -t; pamixer --get-volume-human"
-alias notes="~/scripts/notes"
-alias zshrc="vim ~/.zshrc.local"
-alias dlsite="wget -mpEk"
-alias htdo="sudo -u http"
-alias copy="xclip -selection clipboard"
-alias i3config="vim ~/.config/i3/config.local"
-alias mdiskimg="sudo losetup --partscan --find --show"
-alias vimrc="vim ~/.vim/vimrc"
-
-#tmux is hard to type
-alias tm="tmux"
-alias tml="tmux list-sessions"
-alias tma="tmux attach"
-alias tmat="tmux attach -t"
-
-#nnn use vim
-alias nnn="nnn -e"
-
 export VISUAL="vim"
 export EDITOR="vim"
 export SUDO_EDITOR="vim"
@@ -90,4 +50,5 @@ RPROMPT='?[%?] $(__git_ps1 " (%s)") on %F{10}%m%F{15} at %t'
 
 #export PATH="/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/oaks/.vimpkg/bin"
 
+source ~/.zshrc.alias
 source ~/.zshrc.local
