@@ -19,9 +19,9 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
-export VISUAL="vim"
-export EDITOR="vim"
-export SUDO_EDITOR="vim"
+export VISUAL="nvim"
+export EDITOR="nvim"
+export SUDO_EDITOR="nvim"
 export GPG_TTY=$(tty)
 
 export TERMINAL="gnome-terminal"
@@ -52,3 +52,19 @@ RPROMPT='?[%?] $(__git_ps1 " (%s)") on %F{10}%m%F{15} at %t'
 
 source ~/.zshrc.alias
 source ~/.zshrc.local
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+#__conda_setup="$('/home/oaks/micromamba/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+    #eval "$__conda_setup"
+#else
+    #if [ -f "/home/oaks/micromamba/etc/profile.d/conda.sh" ]; then
+        #. "/home/oaks/micromamba/etc/profile.d/conda.sh"
+    #else
+        #export PATH="/home/oaks/micromamba/bin:$PATH"
+    #fi
+#fi
+#unset __conda_setup
+# <<< conda initialize <<<
+

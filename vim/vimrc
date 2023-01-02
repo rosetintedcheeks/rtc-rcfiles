@@ -17,6 +17,7 @@ nnoremap <silent> <leader>] :JavaSearch<CR>
 nnoremap <silent> <leader>[ :JavaCorrect<CR>
 nnoremap <silent> <leader>m :call ToggleMouse()<CR>
 
+nnoremap <silent> <leader>c :%y+<CR>
 
 set mouse=a
 let g:mouse_on = 1
@@ -57,6 +58,7 @@ set nocompatible
 set backspace=eol,indent,start
 set autoindent
 set smartindent
+set nofixendofline
 
 " don't highlight the last search upon startup
 set viminfo="h"
@@ -125,3 +127,5 @@ set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/afte
 "call pathogen#helptags()
 
 au BufWritePost *.php silent! !eval '[ -f ".git/hooks/ctags" ] && .git/hooks/ctags' &
+
+let g:nnn#command = 'nnn -o'

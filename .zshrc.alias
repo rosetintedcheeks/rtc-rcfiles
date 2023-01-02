@@ -9,7 +9,7 @@ alias lsa="ls -la"
 alias view="vim -R"
 alias c="clear"
 alias aur="cd /home/oaks/aur"
-alias inst="makepkg -si"
+alias inst="makepkg -sic"
 alias pkb="cat PKGBUILD"
 alias se="sudoedit"
 alias get="sudo pacman -Syu"
@@ -28,6 +28,7 @@ alias copy="xclip -selection clipboard"
 alias i3config="vim ~/.config/i3/config.local"
 alias mdiskimg="sudo losetup --partscan --find --show"
 alias vimrc="vim ~/.vim/vimrc"
+alias notify="~/scripts/notify"
 
 #tmux is hard to type
 alias tm="tmux"
@@ -37,3 +38,7 @@ alias tmat="tmux attach -t"
 
 #nnn use vim
 alias nnn="nnn -e"
+
+#brightside stuff
+alias bsgo="~/hcsscripts/database/go.zsh"
+alias bserase="~/hcsscripts/database/erase.zsh"
