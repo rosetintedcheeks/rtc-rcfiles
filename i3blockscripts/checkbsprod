@@ -1,0 +1,8 @@
+#!/usr/bin/zsh
+
+# get current script's directory
+__dir="$(cd "$(dirname "${(%):-%x}")" && pwd)"
+
+source $__dir/.env
+
+mysql -h localhost -P 3306 --protocol=tcp -D $DBNAME -u $DBUSER --password=$DBPASS < $__dir/sql/checkbsprod.sql 

@@ -1,0 +1,22 @@
+#!/usr/bin/zsh
+
+__dir="$(cd "$(dirname "${(%):-%x}")" && pwd)"
+
+source $__dir/.env
+
+echo -n "DB:"
+DBOK=$(mysql -D brightside -h localhost -P 3306 --protocol=tcp -u brightside --password=password <<< "SHOW TABLES")
+
+# if dbok is not empty, check for prod values
+if [[ -n $DBOK ]]; then
+	DBOK=$($__dir/checkbsprod 2>&1)
+else
+	echo '<span color="red">EMPTY</span>'
+fi
+
+# if there are no prod values, then everything is ok
+if [[ -z $DBOK ]]; then
+	echo '<span foreground="#22BB22">OK</span>'
+else
+	echo '<span color="red" size="x-large">MAYBE PRODUCTION</span>'
+fi

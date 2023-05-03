@@ -1,0 +1,8 @@
+#!/usr/bin/zsh
+
+echo -n 'INET:'
+if ping -c 1 google.com &>/dev/null; then
+	echo '<span color="#22BB22">UP</span>'
+else
+	echo '<span color="red">DOWN</span>'
+fi

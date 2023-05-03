@@ -30,12 +30,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -97,10 +92,13 @@ bindsym $mod+f fullscreen toggle
 # i don't use this one so I'm giving it to spotify
 #bindsym $mod+s layout stacking 
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# i don't use this one either so eclipse
+#bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+space floating toggle
+
+bindsym $mod+Mod1+space sticky toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+Shift+space focus mode_toggle
@@ -165,7 +163,7 @@ bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    status_command ~/.config/i3status/i3statusconf.sh
+    status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
     position top
     colors {
         focused_workspace #aaaaaa #000000 #ffffff
@@ -188,13 +186,14 @@ set $i3lockwall sh ~/.config/i3/scripts/lock.sh
 #exec xautolock -time 15 -locker "sh ~/.config/i3/scripts/lock.sh" &
 
 # shutdown / restart / suspend...
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (CTRL+s) shutdown
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (g) stop gdm, (r) reboot, (CTRL+s) shutdown
 
 mode "$mode_system" {
     bindsym l exec --no-startup-id $i3lockwall, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym s exec --no-startup-id $i3lockwall && systemctl suspend, mode "default"
     bindsym h exec --no-startup-id $i3lockwall && systemctl hibernate, mode "default"
+	bindsym g exec --no-startup-id sudo systemctl stop gdm.service, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Ctrl+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
@@ -206,9 +205,18 @@ mode "$mode_system" {
 bindsym $mod+BackSpace mode "$mode_system"
 
 bindsym XF86Sleep exec --no-startup-id $i3lockwall
-bindcode 172 exec --no-startup-id playerctl play-pause
-bindcode 173 exec --no-startup-id playerctl previous
-bindcode 171 exec --no-startup-id playerctl next
+
+# Use pactl to adjust volume in PulseAudio.
+#set $refresh_i3status killall -SIGUSR1 i3status
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+#bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# change volume or toggle mute
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks 
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
 
 # WM_CLASS = instance, class
 
