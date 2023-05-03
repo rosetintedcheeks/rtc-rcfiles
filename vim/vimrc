@@ -13,8 +13,8 @@ inoremap <C-k> <C-p>
 nnoremap <S-k> k.
 nnoremap <S-j> j.
 
-nnoremap <silent> <leader>] :JavaSearch<CR>
-nnoremap <silent> <leader>[ :JavaCorrect<CR>
+"nnoremap <silent> <leader>] :JavaSearch<CR>
+"nnoremap <silent> <leader>[ :JavaCorrect<CR>
 nnoremap <silent> <leader>m :call ToggleMouse()<CR>
 
 nnoremap <silent> <leader>c :%y+<CR>

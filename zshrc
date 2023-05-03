@@ -19,6 +19,9 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
+
 export VISUAL="nvim"
 export EDITOR="nvim"
 export SUDO_EDITOR="nvim"

@@ -22,13 +22,12 @@ alias volset="pamixer --set-volume"
 alias mute="pamixer -t; pamixer --get-volume-human"
 alias notes="~/scripts/notes"
 alias zshrc="vim ~/.zshrc.local"
-alias dlsite="wget -mpEk"
 alias htdo="sudo -u http"
 alias copy="xclip -selection clipboard"
 alias i3config="vim ~/.config/i3/config.local"
 alias mdiskimg="sudo losetup --partscan --find --show"
 alias vimrc="vim ~/.vim/vimrc"
-alias notify="~/scripts/notify"
+alias abyss="ssh abyss.rosetintedcheeks.com"
 
 #tmux is hard to type
 alias tm="tmux"
@@ -39,6 +38,3 @@ alias tmat="tmux attach -t"
 #nnn use vim
 alias nnn="nnn -e"
 
-#brightside stuff
-alias bsgo="~/hcsscripts/database/go.zsh"
-alias bserase="~/hcsscripts/database/erase.zsh"

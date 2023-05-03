@@ -3,5 +3,10 @@ if [ -z "$1" ]
 then
     nvim ~/stuff/notes/notes.txt
 else
-    nvim ~/stuff/notes/$1.txt
+	if [[ -f ~/stuff/notes/$1.txt.gpg ]]
+	then
+		nvim ~/stuff/notes/$1.txt.gpg
+	else
+		nvim ~/stuff/notes/$1.txt
+	fi
 fi
