@@ -27,7 +27,7 @@ alias copy="xclip -selection clipboard"
 alias i3config="vim ~/.config/i3/config.local"
 alias mdiskimg="sudo losetup --partscan --find --show"
 alias vimrc="vim ~/.vim/vimrc"
-alias abyss="ssh abyss.rosetintedcheeks.com"
+alias abyss="kitty +kitten ssh abyss.rosetintedcheeks.com"
 
 #tmux is hard to type
 alias tm="tmux"
@@ -38,3 +38,6 @@ alias tmat="tmux attach -t"
 #nnn use vim
 alias nnn="nnn -e"
 
+alias icat="kitty +kitten icat"
+alias s="kitty +kitten ssh"
+alias kc="vim .config/kitty/kitty.local.conf"

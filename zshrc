@@ -27,7 +27,7 @@ export EDITOR="nvim"
 export SUDO_EDITOR="nvim"
 export GPG_TTY=$(tty)
 
-export TERMINAL="gnome-terminal"
+export TERMINAL="kitty"
 
 source ~/.git-prompt.sh
 setopt PROMPT_SUBST
