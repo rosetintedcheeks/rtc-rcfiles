@@ -6,7 +6,6 @@ rm ~/.config/kitty/kitty.conf
 ln kitty.conf ~/.config/kitty/kitty.conf
 rm ~/.config/i3/config
 ln i3config ~/.config/i3/config
-rm ~/.config/i3blocks/scripts
 cp -rl scripts ~/.config/i3blocks/scripts
 rm ~/.gitprompt.sh
 ln git-prompt.sh ~/.gitprompt.sh
