@@ -1,33 +1,7 @@
-#[bsdb]
-#command=$SCRIPT_DIR/checkbsprod
-#interval=5
-#markup=pango
-
-#[import]
-#command=ps -eo pid,pcpu,size,comm | grep python | grep -v grep | awk '{print "IMPORT MSIZE: " sprintf("%.2f", $3/1024) " MB"}'
-#interval=1
-
-#[digbb]
-#command=dig +short kb.bookonthebrightside.com | awk 'END { if($0 == "130.211.11.232"){ print "<span size=\"x-large\" color=\"red\">no</span>" } else { print "<span size=\"x-large\" color=\"green\">yes</span>"}}'
-#interval=1
-#markup=pango
-
-
-
-#[dighcs]
-#command=dig +short kb.hawkinscomputerservices.com | awk 'END { if(NR == 0){ print "<span size=\"x-large\" color=\"red\">no</span>" } else { print "<span size=\"x-large\" color=\"green\">yes</span>"}}'
-#interval=1
-#markup=pango
-
 [bsdbempty]
 command=$SCRIPT_DIR/checkbsdbempty
 interval=5
 markup=pango
-
-#[bsport]
-#command=$SCRIPT_DIR/checkbsport
-#interval=5
-#markup=pango
 
 [loadavg]
 command=$SCRIPT_DIR/loadavg
