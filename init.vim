@@ -126,13 +126,4 @@ set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/afte
 
 let g:nnn#command = 'nnn -o'
 
-lua <<EOF
-vim.opt.runtimepath:append("/home/oaks/.config/nvim-ts-parsers")
-
-require'nvim-treesitter.configs'.setup {
-	parser_install_dir = "/home/oaks/.config/nvim-ts-parsers",
-}
-EOF
-
-
 colorscheme elflord
