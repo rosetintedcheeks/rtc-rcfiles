@@ -1,0 +1,17 @@
+qr() {
+	{
+		if [[ -z $1 ]]; then
+			xclip -selection c -o
+		else
+			echo $1
+		fi
+	} | {
+		tee /dev/tty | qrencode -o -
+	} | {
+		if [[ -n $2 ]]; then
+			 > $2
+		else
+			icat
+		fi
+	}
+}

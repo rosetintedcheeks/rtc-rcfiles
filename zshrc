@@ -54,6 +54,7 @@ RPROMPT='?[%?] $(__git_ps1 " (%s)") on %F{10}%m%F{15} at %t'
 #export PATH="/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/oaks/.vimpkg/bin"
 
 source ~/.zshrc.alias
+source ~/.zshrc.functions
 source ~/.zshrc.local
 
 # >>> conda initialize >>>
