@@ -164,7 +164,7 @@ bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # finds out, if available)
 bar {
     status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
-    position top
+    position bottom
     colors {
         focused_workspace #aaaaaa #000000 #ffffff
         statusline #ffffff
