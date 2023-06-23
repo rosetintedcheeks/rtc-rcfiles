@@ -42,6 +42,3 @@ alias icat="kitty +kitten icat"
 alias s="kitty +kitten ssh"
 alias kc="vim .config/kitty/kitty.local.conf"
 alias kitty-confirm="kitty -c .config/kitty/kitty.conf -c .config/kitty/confirm_close.conf --detach"
-
-alias todo="nb todo open"
-alias nbt='echo "- [ ] "'
