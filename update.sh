@@ -9,7 +9,7 @@ ln kitty.conf ~/.config/kitty/kitty.conf
 rm ~/.config/i3/config
 ln i3config ~/.config/i3/config
 cp -rl i3blockscripts/. ~/.config/i3blocks/scripts
-rm ~/.gitprompt.sh
-ln git-prompt.sh ~/.gitprompt.sh
+rm ~/.git-prompt.sh
+ln git-prompt.sh ~/.git-prompt.sh
 rm ~/.config/nvim/init.vim
 ln init.vim ~/.config/nvim/init.vim
