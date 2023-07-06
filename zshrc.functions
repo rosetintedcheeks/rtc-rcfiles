@@ -2,6 +2,8 @@ qr() {
 	{
 		if [[ -z $1 ]]; then
 			xclip -selection c -o
+		elif [[ $1 == '-' ]]; then
+			cat
 		else
 			echo $1
 		fi
